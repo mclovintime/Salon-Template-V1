@@ -1,0 +1,304 @@
+/*-- -------------------------- -->
+<---           Hero             -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    :root {
+      /* remove this whole :root and put in your global css file that's shared on all pages, then just remove this section from all other Stitches you add later, only need this once in your global stylesheet */
+      --primary: #AC8856;
+      --primaryLight: #d8673d;
+      --secondary: #FFBA43;
+      --secondaryLight: #FFBA43;
+      --headerColor: #1a1a1a;
+      --bodyTextColor: #4E4B66;
+      --bodyTextColorWhite: #FAFBFC;
+      /* 13px - 16px */
+      --topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
+      /* 31px - 49px */
+      --headerFontSize: clamp(1.9375rem, 3.9vw, 3.0625rem);
+      --bodyFontSize: 1rem;
+      /* 60px - 100px top and bottom */
+      --sectionPadding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem;
+    }
+    #hero-929 {
+
+      /* remove the font family so the Stitch inherits the fonts from your global stylesheet */
+      font-family: 'Roboto', 'Arial', sans-serif;
+      padding: var(--sectionPadding);
+      /* 160px - 200px */
+
+      /* THIS IS A FIX FOR THE PICTURE AT THE BOTTOM, IT LEFT A GAP BETWEEN HEADER AND THE REST OF THE CONTENT, JUST BE AWARE OF THIS FOR LATER */
+
+      padding-top: clamp(15.3rem, 16vw, 12.5rem);
+      padding-bottom: 0;
+      position: relative;
+      
+      border-bottom: 16px solid #ac8856;
+      
+    }
+    
+    #hero-929 .cs-container {
+      width: 100%;
+      max-width: 80rem;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      /* 48px - 64px */
+      gap: clamp(3rem, 6vw, 4rem);
+      position: relative;
+    }
+    #hero-929 .cs-content {
+      /* set text align to left if content needs to be left aligned */
+      text-align: center;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      /* centers content horizontally, set to flex-start to left align */
+      align-items: center;
+    }
+    #hero-929 .cs-title {
+      /* 39px - 61px */
+      font-size: clamp(2.4375rem, 6.4vw, 3.8125rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      line-height: 1.2em;
+      text-align: inherit;
+      max-width: 68.5rem;
+      /* 8px - 16px */
+      margin: 0 0 clamp(0.5rem, 2vw, 1rem) 0;
+      color: var(--bodyTextColorWhite);
+      position: relative;
+
+      text-shadow:
+    -1px -1px 0 #AC8856,  
+    1px -1px 0 #AC8856,
+    -1px 1px 0 #AC8856,
+    1px 1px 0 #AC8856,
+    2px 2px 2px rgba(0, 0, 0, 0.3); /* optional soft shadow */
+    }
+    #hero-929 .cs-flex {
+      width: 100%;
+      /* removed at small desktop */
+      margin-bottom: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2.5rem;
+    }
+    #hero-929 .cs-content-group {
+      width: 100%;
+      /* changes to 352px at small desktop */
+      max-width: 43.75rem;
+    }
+    #hero-929 .cs-text {
+      font-size: var(--bodyFontSize);
+      line-height: 1.5em;
+      text-align: inherit;
+      width: 100%;
+      max-width: 40.625rem;
+      margin: 0 auto 1.75rem auto;
+      color: #f7f7f7;
+    }
+    #hero-929 .cs-button-solid {
+      font-size: 1rem;
+      /* 46px - 56px */
+      line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+      text-decoration: none;
+      font-weight: 700;
+      text-align: center;
+      margin: 0;
+      color: #fff;
+      min-width: 9.375rem;
+      padding: 0 2rem;
+      background-color: var(--primary);
+      display: inline-block;
+      position: relative;
+      z-index: 1;
+      /* prevents padding from adding to the width */
+      box-sizing: border-box;
+    }
+    #hero-929 .cs-button-solid:before {
+      content: '';
+      position: absolute;
+      height: 100%;
+      width: 0%;
+      background: #000;
+      opacity: 1;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      transition: width .3s;
+    }
+    #hero-929 .cs-button-solid:hover:before {
+      width: 100%;
+    }
+    #hero-929 .cs-hours-group {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      row-gap: 1.25rem;
+      column-gap: 1.5rem;
+    }
+    #hero-929 .cs-header {
+      /* 20px - 25px */
+      font-size: clamp(1.25rem, 2vw, 1.5625rem);
+      line-height: 1.2em;
+      font-weight: bold;
+      text-align: center;
+      width: 100%;
+      color: var(--bodyTextColorWhite);
+      display: block;
+    }
+    #hero-929 .cs-hours {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+    #hero-929 .cs-day {
+      font-size: 1rem;
+      line-height: 1.2em;
+      font-weight: bold;
+      color: var(--primary);
+      display: block;
+    }
+    #hero-929 .cs-time {
+      font-size: 1rem;
+      line-height: 1.5em;
+      margin: 0;
+      color: #f7f7f7;
+      display: block;
+    }
+    #hero-929 .cs-picture-group {
+      position: relative;
+    }
+    #hero-929 .cs-tagline {
+      /* 52px - 62px */
+      font-size: clamp(3.25rem, 7vw, 3.875rem);
+      font-family: 'Dancing Script', cursive, 'Arial', sans-serif;
+      text-shadow:
+    -1px -1px 0 #fff,  
+    1px -1px 0 #fff,
+    -1px 1px 0 #fff,
+    1px 1px 0 #fff,
+    2px 2px 2px rgba(0, 0, 0, 0.3); /* optional soft shadow */
+
+      line-height: .9em;
+      max-width: 5ch;
+      margin: 0 auto -2.125rem;
+      color: var(--primary);
+      display: block;
+      transform: rotate(-14.36deg) translateX(-6.25rem);
+    }
+    #hero-929 .cs-picture {
+      width: 100%;
+      height: auto;
+      max-height: 37.375rem;
+      display: flex;
+      align-items: flex-end;
+    }
+    #hero-929 .cs-picture img {
+      width: 100%;
+      height: auto;
+    }
+    #hero-929 .cs-background {
+      width: 100%;
+      height: 100%;
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+    #hero-929 .cs-background:before {
+      /* background color overlay */
+      content: '';
+      position: absolute;
+      display: block;
+      height: 100%;
+      width: 100%;
+      background: #1a1a1a;
+      opacity: .96;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+    #hero-929 .cs-background img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      /* Makes img tag act as a background image */
+      object-fit: cover;
+    }
+  }
+  /* Tablet - 768px */
+  @media only screen and (min-width: 48rem) {
+    #hero-929 .cs-header {
+      text-align: left;
+      width: auto;
+      /* removed at small desktop */
+      max-width: 8ch;
+    }
+  }
+  /* Small Desktop - 1024px */
+  @media only screen and (min-width: 64rem) {
+    #hero-929 .cs-flex {
+      margin: 0;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-end;
+      position: absolute;
+      /* 80px - 100px */
+      bottom: clamp(5rem, 8vw, 6.25rem);
+    }
+    #hero-929 .cs-content-group {
+      text-align: left;
+      width: 24vw;
+      max-width: 22rem;
+    }
+    #hero-929 .cs-hours-group {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    #hero-929 .cs-header {
+      max-width: 100%;
+    }
+    #hero-929 .cs-picture-group {
+      margin-top: -3.125rem;
+    }
+    #hero-929 .cs-tagline {
+      margin: 0;
+      position: absolute;
+      /* changes at large desktop */
+      left: 3.75rem;
+      /* 90px - 130px */
+      top: clamp(5.625rem, 10vw, 8.125rem);
+    }
+    #hero-929 {
+        height: 100vh;
+      }
+  }
+  /* Large Desktop 1300px */
+  @media only screen and (min-width: 81.25rem) {
+    #hero-929 .cs-hours-group {
+      max-width: 20rem;
+      flex-direction: row;
+      justify-content: flex-start;
+    }
+    #hero-929 .cs-header {
+      width: 100%;
+    }
+    #hero-929 .cs-tagline {
+      left: 1.625rem;
+      top: 8.125rem;
+    }
+  }
+                                  
+
+  

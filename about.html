@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,13 +29,16 @@
     <meta name="theme-color" content="#ffffff">
 
     <!-- Preload -->
-    <link rel="preload" as="image" href="/images/cabinets2-m.jpg">
+    <link rel="preload" as="image" href="/images/salon-cover.jpeg">
     <link rel="preload" as="font" type="font/woff2" href="fonts/roboto-v29-latin-regular.woff2" crossorigin>
     <link rel="preload" as="font" type="font/woff2" href="fonts/roboto-v29-latin-700.woff2" crossorigin>
 
     <link rel="stylesheet" href="/css/root.css">
     <link rel="stylesheet" href="/css/about.css">
     <link rel="stylesheet" href="/css/dark.css">
+    <link rel="stylesheet" href="/css/newabout.css">
+    <link rel="stylesheet" href="/css/newnav.css">
+    <link rel="stylesheet" href="/css/newfinalcall.css">
 
     <!--Put analytics tag here at the bottom to prevent it from render blocking-->
 
@@ -44,53 +48,78 @@
     <!--Screen reader skip main nav-->
     <a class="skip" aria-label="skip to main content" href="#main">Click To Skip To Main Content</a>
 
-    <!-- ============================================ -->
-    <!--                 Navigation                   -->
-    <!-- ============================================ -->
 
-    <div id="navigation">
-        <div aria-hidden="true" class="background-color-div">
-            <!--This div is used to overcome a z-index issue where the open
-                #navbar-menu is on top of the #navigation. This bar places itself 
-                the #navbar-menu so that menu appears behind the #navigation
-            -->
-        </div>
-        <div class="container">
-            <!--Logo - Get SVGs if you can.  I use fiverr to get png's turned into SVGs. Highly recommend it, worth the $20 - get a light and dark version-->
-            <a class="logo" aria-label="click to go to home page" href="/index.html">
-                <!--Light Colored Logo, remove .dark image tag and the .light class if you don't have a dark and light version -->
-                <img class="light" aria-hidden="true" src="/images/logo-light.png" decoding="async" alt="logo" width="221" height="66">
+<!-- ============================================ -->
+<!--                 Navigation                   -->
+<!-- ============================================ -->
 
-                <!--Dark Colored Logo-->
-                <img class="dark" aria-hidden="true" src="/images/logo-blue.png" decoding="async" loading="lazy" alt="logo" width="221" height="66">
-            </a>
-
-            <!--Main Nav-->
-            <nav id="navbar-menu">
-                <ul>
-                    <li><a href="/index.html">Home</a></li>
-                    <li><a class="active" href="/about.html">About Us</a></li>
-                    <li><a href="/projects.html">Projects</a></li>
-                    <li><a href="/reviews.html">Reviews</a></li>
-                    <li><a href="/contact.html">Contact</a></li>
+<header id="cs-navigation">
+    <div class="cs-container">
+        <!--Nav Logo-->
+        <a href="index.html" class="cs-logo" aria-label="back to home">
+            <img src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/logo.svg" alt="logo" width="210" height="29" aria-hidden="true" decoding="async">
+        </a>
+        <!--Navigation List-->
+        <nav class="cs-nav" role="navigation">
+            <!--Mobile Nav Toggle-->
+            <button class="cs-toggle" aria-label="mobile menu toggle">
+                <div class="cs-box" aria-hidden="true">
+                    <span class="cs-line cs-line1" aria-hidden="true"></span>
+                    <span class="cs-line cs-line2" aria-hidden="true"></span>
+                    <span class="cs-line cs-line3" aria-hidden="true"></span>
+                </div>
+            </button>
+            <!-- We need a wrapper div so we can set a fixed height on the cs-ul in case the nav list gets too long from too many dropdowns being opened and needs to have an overflow scroll. This wrapper acts as the background so it can go the full height of the screen and not cut off any overflowing nav items while the cs-ul stops short of the bottom of the screen, which keeps all nav items in view no matter how mnay there are-->
+            <div class="cs-ul-wrapper">
+                <ul id="cs-expanded" class="cs-ul" aria-expanded="false">
+                    <li class="cs-li">
+                        <a href="index.html" class="cs-li-link cs-active">
+                            Home
+                        </a>
+                    </li>
+                    <li class="cs-li">
+                        <a href="about.html" class="cs-li-link">
+                            About
+                        </a>
+                    </li>
+                    <!--Copy and paste this cs-dropdown list item and replace any .cs-li with this cs-dropdown group to make a new dropdown and it will work-->
+                    <li class="cs-li cs-dropdown" tabindex="0">
+                        <span class="cs-li-link">
+                            Services
+                            <img class="cs-drop-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/down-gold.svg" alt="dropdown icon" width="15" height="15" decoding="async" aria-hidden="true">
+                        </span>
+                        <ul class="cs-drop-ul">
+                            <li class="cs-drop-li">
+                                <a href="services.html" class="cs-li-link cs-drop-link">Highlights</a>
+                            </li>
+                            <li class="cs-drop-li">
+                                <a href="services.html" class="cs-li-link cs-drop-link">Women's Hair Cuts</a>
+                            </li>
+                        </ul>
+                    </li>
+                    
+                    <li class="cs-li">
+                        <a href="gallery.html" class="cs-li-link">
+                            Gallery
+                        </a>
+                    </li>
+                    <li class="cs-li">
+                        <a href="faq.html" class="cs-li-link">
+                            FAQ
+                        </a>
+                    </li>
                 </ul>
-            </nav>
-
-            <!--Dark Mode toggle-->
-            <button id="dark-mode-toggle">
-                <!--Moon is an inline SVG so you can edit the color if needed-->
-                <svg class="moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" style="enable-background:new 0 0 480 480" xml:space="preserve"><path d="M459.782 347.328c-4.288-5.28-11.488-7.232-17.824-4.96-17.76 6.368-37.024 9.632-57.312 9.632-97.056 0-176-78.976-176-176 0-58.4 28.832-112.768 77.12-145.472 5.472-3.712 8.096-10.4 6.624-16.832S285.638 2.4 279.078 1.44C271.59.352 264.134 0 256.646 0c-132.352 0-240 107.648-240 240s107.648 240 240 240c84 0 160.416-42.688 204.352-114.176 3.552-5.792 3.04-13.184-1.216-18.496z"/></svg>
-                <img class="sun" aria-hidden="true" src="/images/sun.svg" decoding="async" alt="moon" width="15" height="15">
-            </button>
-
-            <!--Mobile Nav toggle-->
-            <button class="hamburger-menu">
-                <span aria-hidden="true"></span>
-            </button>
-        </div>
+            </div>
+        </nav>
+        <a href="contact.html" class="cs-button-solid cs-nav-button">Contact Us</a>
+        <!--Dark Mode toggle, uncomment button code if you want to enable a dark mode toggle-->
+        <!-- <button id="dark-mode-toggle" aria-label="dark mode toggle">
+            <svg class="cs-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" style="enable-background:new 0 0 480 480" xml:space="preserve"><path d="M459.782 347.328c-4.288-5.28-11.488-7.232-17.824-4.96-17.76 6.368-37.024 9.632-57.312 9.632-97.056 0-176-78.976-176-176 0-58.4 28.832-112.768 77.12-145.472 5.472-3.712 8.096-10.4 6.624-16.832S285.638 2.4 279.078 1.44C271.59.352 264.134 0 256.646 0c-132.352 0-240 107.648-240 240s107.648 240 240 240c84 0 160.416-42.688 204.352-114.176 3.552-5.792 3.04-13.184-1.216-18.496z"/></svg>
+            <img class="cs-sun" aria-hidden="true" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fsun.svg" decoding="async" alt="moon" width="15" height="15">
+        </button> -->
     </div>
-
-    <main id="main">
+</header>           
+                            
 
         <!-- ============================================ -->
         <!--                    LANDING                   -->
@@ -99,82 +128,166 @@
         <section id="int-hero">
             <h1 id="home-h">About Us</h1>
             <picture>
-                <source media="(max-width: 600px)" srcset="/images/cabinets2-m.jpg">
-                <source media="(min-width: 601px)" srcset="/images/cabinets2.jpg">
+                <source media="(max-width: 600px)" srcset="/images/salon-cover.jpeg">
+                <source media="(min-width: 601px)" srcset="/images/salon-cover.jpeg">
                 <img aria-hidden="true" decoding="async" src="/images/cabinets2.jpg" alt="cabinets" width="400" height="662">
             </picture>
         </section>
+<!-- ============================================ -->
+<!--                Meet The Team                 -->
+<!-- ============================================ -->
 
-        <!-- ============================================ -->
-        <!--                   About                      -->
-        <!-- ============================================ -->
-
-        <section id="sidebyside" class="sidebyside">
-            <div class="container">
-                <div class="content">
-                    <h2 class="title">Lorem ipsum dolor sit amet consectetur.</h2>
-                     <p>
-                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam debitis dolor consectetur dolorem inventore modi tenetur ex odit, amet beatae ad, doloribus tempora quae ab nulla minus temporibus at veritatis!
-                     </p>
-                     <p>
-                         <strong>List if you need it:</strong>
-                      </p>
-                     <ul>
-                        <li>
-                            <img aria-hidden="true" loading="lazy" decoding="async" src="/images/check.svg" alt="check mark" width="20" height="20">
-                            <span>List item about something</span>
-                        </li>
-                        <li>
-                            <img aria-hidden="true" loading="lazy" decoding="async" src="/images/check.svg" alt="check mark" width="20" height="20">
-                            <span>List item about something</span>
-                        </li>
-                        <li>
-                            <img aria-hidden="true" loading="lazy" decoding="async" src="/images/check.svg" alt="check mark" width="20" height="20">
-                            <span>List item about something</span>
-                        </li>
-                        <li>
-                            <img aria-hidden="true" loading="lazy" decoding="async" src="/images/check.svg" alt="check mark" width="20" height="20">
-                            <span>List item about something</span>
-                        </li>
-                        <li>
-                            <img aria-hidden="true" loading="lazy" decoding="async" src="/images/check.svg" alt="check mark" width="20" height="20">
-                            <span>List item about something</span>
-                        </li>
-                    </ul>
-                     <p>
-                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium saepe laborum nam consequuntur porro inventore odio? Quod autem alias ratione cum reiciendis qui quaerat, sequi voluptatum voluptatibus, iusto itaque sed ullam. Quis, maiores corrupti. Rerum quo laudantium vero magnam tempora!
-                     </p>
-                     <a class="button-solid" href="/conttact.html">Get Free Quote</a>
+<section id="meet-team-979">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">Our Team</span>
+            <h2 class="cs-title">Our Expert Team Members</h2>
+            <p class="cs-text">
+                At Stitch Salon Service, we strive to give the best experience and service to ever client that walks in the door. Meet the team members that make it all possible.
+            </p>
+        </div>
+        <ul class="cs-card-group">
+            <li class="cs-item">
+                <picture class="cs-picture">
+                    <!--Mobile Image-->
+                    <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/stylist1.jpg">
+                    <!--Tablet and above Image-->
+                    <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/stylist1.jpg">
+                    <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/stylist1.jpg" alt="stylist" width="320" height="400">
+                </picture>
+                <div class="cs-info">
+                    <span class="cs-name">Esther Howard</span>
+                    <span class="cs-job">Hair Expert</span>
+                    <div class="cs-social-group">
+                        <a href="" class="cs-link" aria-label="visit linkedin">
+                            <img class="cs-icon" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/linkedin-gold.svg" alt="linkedin" width="12" height="12">
+                        </a>
+                        <a href="" class="cs-link" aria-label="visit twitter">
+                            <img class="cs-icon" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/twitter-gold.svg" alt="twitter" width="12" height="12">
+                        </a>
+                        <a href="" class="cs-link" aria-label="visit instragram">
+                            <img class="cs-icon" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/instagram-gold.svg" alt="instragram" width="12" height="12">
+                        </a>
+                        <a href="" class="cs-link" aria-label="visit youtube">
+                            <img class="cs-icon" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/youtube-gold.svg" alt="youtube" width="12" height="12">
+                        </a>
+                    </div>
                 </div>
-                <picture class="image-box">
-                     <source media="(max-width: 600px)" srcset="/images/cabinets2-m.jpg">
-                     <source media="(min-width: 601px)" srcset="/images/cabinets2.jpg">
-                     <img aria-hidden="true" loading="lazy" decoding="async" src="/images/cabinets2.jpg" alt="cabinets" width="400" height="662">
-                 </picture>
-            </div>
-       </section>
+            </li>
+            <li class="cs-item">
+                <picture class="cs-picture">
+                    <!--Mobile Image-->
+                    <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/stylist2.jpg">
+                    <!--Tablet and above Image-->
+                    <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/stylist2.jpg">
+                    <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/stylist2.jpg" alt="stylist" width="320" height="400">
+                </picture>
+                <div class="cs-info">
+                    <span class="cs-name">Jenny Wilson</span>
+                    <span class="cs-job">Hair Expert</span>
+                    <div class="cs-social-group">
+                        <a href="" class="cs-link" aria-label="visit linkedin">
+                            <img img class="cs-icon" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/linkedin-gold.svg" alt="linkedin" width="12" height="12">
+                        </a>
+                        <a href="" class="cs-link" aria-label="visit twitter">
+                            <img img class="cs-icon" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/twitter-gold.svg" alt="twitter" width="12" height="12">
+                        </a>
+                        <a href="" class="cs-link" aria-label="visit instragram">
+                            <img img class="cs-icon" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/instagram-gold.svg" alt="instragram" width="12" height="12">
+                        </a>
+                        <a href="" class="cs-link" aria-label="visit youtube">
+                            <img img class="cs-icon" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/youtube-gold.svg" alt="youtube" width="12" height="12">
+                        </a>
+                    </div>
+                </div>
+            </li>
+            <li class="cs-item">
+                <picture class="cs-picture">
+                    <!--Mobile Image-->
+                    <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/stylist3.jpg">
+                    <!--Tablet and above Image-->
+                    <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/stylist3.jpg">
+                    <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/stylist3.jpg" alt="stylist" width="320" height="400">
+                </picture>
+                <div class="cs-info">
+                    <span class="cs-name">Leslie Alexander</span>
+                    <span class="cs-job">Hair Expert</span>
+                    <div class="cs-social-group">
+                        <a href="" class="cs-link" aria-label="visit linkedin">
+                            <img img class="cs-icon" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/linkedin-gold.svg" alt="linkedin" width="12" height="12">
+                        </a>
+                        <a href="" class="cs-link" aria-label="visit twitter">
+                            <img img class="cs-icon" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/twitter-gold.svg" alt="twitter" width="12" height="12">
+                        </a>
+                        <a href="" class="cs-link" aria-label="visit instragram">
+                            <img img class="cs-icon" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/instagram-gold.svg" alt="instragram" width="12" height="12">
+                        </a>
+                        <a href="" class="cs-link" aria-label="visit youtube">
+                            <img img class="cs-icon" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/youtube-gold.svg" alt="youtube" width="12" height="12">
+                        </a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</section>
 
-        <!-- ============================================ -->
-        <!--             Final Call to Action             -->
-        <!-- ============================================ -->
+<!-- SVG ATTEMPT #2 -->
+<svg id="wavey" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+    <path fill="#1a1a1a" fill-opacity="1" d="M0,224L48,213.3C96,203,192,181,288,192C384,203,480,245,576,250.7C672,256,768,224,864,224C960,224,1056,256,1152,256C1248,256,1344,224,1392,208L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+</svg>
+  
+                                
+<!-- ============================================ -->
+<!--               Why Choose Us                  -->
+<!-- ============================================ -->
 
-        <section id="cta">
-            <div class="container">
-                <h2 class="title">Get It Done <br> With Us Today</h2>
-                <p>
-                    Say something catchy, informative, and encouraging to click the button to go to the contact page.  I like to add these to the bottom of all pages.
-                </p>
-                <a href="/contact.html" class="button-solid">Free Estimate</a>
-            </div>
-            <picture>
-                <source media="(max-width: 600px)" srcset="/images/cabinets2-m.webp">
-                <source media="(min-width: 601px)" srcset="/images/cabinets2.jpg">
-                <img aria-hidden="true" loading="lazy" decoding="async" src="/images/cabinets2.jpg" alt="kitchen cabinets" width="1920" height="1280">
-             </picture>
-        </section>
-
-    </main>
-
+<section id="why-958">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">Why Choose Us</span>
+            <h2 class="cs-title">Providing Our Customers With Quality Services</h2>
+            <a href="" class="cs-button-solid">Book an Appointment</a>
+        </div>
+        <ul class="cs-card-group">
+            <li class="cs-item">
+                <img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/heart-gold.svg" aria-hidden="true" loading="lazy" decoding="async" alt="icon" width="40" height="40">
+                <div class="cs-flex">
+                    <h3 class="cs-h3">We Love Your Hair</h3>
+                    <p class="cs-item-text">
+                        We are well equipped with years of hair know-how, and ready to create your best look with natural products. Hair is our passion.
+                    </p>
+                </div>
+            </li>
+            <li class="cs-item">
+                <img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/trees-gold.svg" aria-hidden="true" loading="lazy" decoding="async" alt="icon" width="40" height="40">
+                <div class="cs-flex">
+                    <h3 class="cs-h3">Only Natural Products</h3>
+                    <p class="cs-item-text">
+                        We are well equipped with years of hair know-how, and ready to create your best look with natural products. Hair is our passion.
+                    </p>
+                </div>
+            </li>
+            <li class="cs-item">
+                <img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/trees-gold.svg" aria-hidden="true" loading="lazy" decoding="async" alt="icon" width="40" height="40">
+                <div class="cs-flex">
+                    <h3 class="cs-h3">Professional Stylists</h3>
+                    <p class="cs-item-text">
+                        We are well equipped with years of hair know-how, and ready to create your best look with natural products. Hair is our passion.
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <picture class="cs-picture">
+        <!--Mobile Image-->
+        <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/hands-m.png">
+        <!--Tablet and above Image-->
+        <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/hands.png">
+        <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/hands.png" alt="hands holding accessories" width="956" height="226">
+    </picture>
+</section>
+                                
     <!-- ============================================ -->
     <!--                   Footer                     -->
     <!-- ============================================ -->
