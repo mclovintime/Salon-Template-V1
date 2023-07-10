@@ -43,6 +43,7 @@
     <link rel="stylesheet" href="/css/newform.css">
     <link rel="stylesheet" href="/css/newlist.css">
     <link rel="stylesheet" href="/css/newlanding.css">
+    <link rel="stylesheet" href="/css/extraslide.css">
 
 
     
@@ -277,6 +278,74 @@
 </section>
 
 <!-- ============================================ -->
+<!--                Side By Side                  -->
+<!-- ============================================ -->
+
+<section id="sbs-949">
+    <div class="cs-container">
+        <div class="cs-image-group">
+            <!--Long Left Image-->
+            <picture class="cs-picture cs-picture1">
+                <!--Mobile Image-->
+                <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/hair5.jpg">
+                <!--Tablet and above Image-->
+                <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/hair5.jpg">
+                <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/hair5.jpg" alt="hair salon" width="349" height="590">
+            </picture>
+            <!--Top right image-->
+            <picture class="cs-picture cs-picture2">
+                <!--Mobile Image-->
+                <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/hair6.jpg">
+                <!--Tablet and above Image-->
+                <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/hair6.jpg">
+                <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/hair6.jpg" alt="hair salon" width="281" height="387">
+            </picture>
+            <!--Bottom right image-->
+            <picture class="cs-picture cs-picture3">
+                <!--Mobile Image-->
+                <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/hair7.jpg">
+                <!--Tablet and above Image-->
+                <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/hair7.jpg">
+                <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/hair7.jpg" alt="hair salon" width="281" height="280">
+            </picture>
+            <!--Seal-->
+            <img class="cs-seal" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/seal.svg" alt="seal" width="150" height="150">
+        </div>
+        <div class="cs-content">
+            <span class="cs-topper">Hair Salon Services</span>
+            <h2 class="cs-title">Life Is More Beautiful When You Meet The Right Hairdresser</h2>
+            <p class="cs-text">
+                The Hair salon Stitch pack is designed specifically for a hairdressers, salons, and beauty centers, with a modern high end feel to match the expectations for design in this industry. These Stitches are great for anything and everything hair and beauty but can also be repurposed for anything high end or luxury.
+            </p>
+            <div class="cs-contact-group">
+                <a class="cs-link" href="mailto:Info@health&wellness.com">
+                    <picture class="cs-wrapper">
+                        <img class="cs-icon" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/pin-hair.svg" alt="icon" width="24" height="24">
+                    </picture>
+                    <div class="cs-info">
+                        <span class="cs-header">Send A Message</span>
+                        <span class="cs-link-content">Info@hairstyle.com</span>
+                    </div>
+                </a>
+                <a class="cs-link" href="">
+                    <picture class="cs-wrapper">
+                        <img class="cs-icon" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/mail-hair.svg" alt="icon" width="24" height="24">
+                    </picture>
+                    <div class="cs-info">
+                        <span class="cs-header">Visit Us At</span>
+                        <span class="cs-link-content">123 Fake St, Highland, IN</span>
+                    </div>
+                </a>
+            </div>
+            <a href="" class="cs-button-solid" aria-label="learn more about us">Learn More</a>
+        </div>
+    </div>
+    <!--Zen Leaf Group-->
+    <img class="cs-floater" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/hair-tools.png" alt="hair tools" width="445" height="310">
+</section>
+                                
+
+<!-- ============================================ -->
 <!--                  Pricing                     -->
 <!-- ============================================ -->
 
@@ -480,7 +549,7 @@
                 <textarea class="cs-input cs-textarea" required name="Message" id="message-587-983" placeholder="Write message..."></textarea>
             </label>
             <div class="cs-wrapper">
-                <button class="cs-button-solid cs-submit" type="submit">Send Message</button>
+                <button id="send-message" class="cs-button-solid cs-submit" type="submit">Send Message</button>
             </div>
         </form>
     </div>
@@ -503,7 +572,7 @@
     <footer id="footer">
         <div class="container">
             <div class="left-section">
-                <a class="logo" href="/index.html"><img loading="lazy" decoding="async" src="/images/logo-light.png" alt="logo" width="264" height="78"></a>
+                <a class="logo" href="/index.html"><img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/logo.svg" alt="logo" width="264" height="78"></a>
                 <p>
                     Extra content if you need it, if not you can delete this whole p tag. I usually do.
                 </p>
@@ -514,7 +583,7 @@
                         <li><h2>Information</h2></li>
                         <li><a href="/index.html">Home</a></li>
                         <li><a href="/about.html">About Us</a></li>
-                        <li><a href="/projects.html">Projects</a></li>
+                        <li><a href="/services.html">Services</a></li>
                         <li><a href="/testimonials.html">Reviews</a></li>
                         <li><a href="/contact.html">Contact</a></li>
                     </ul>
@@ -537,8 +606,8 @@
 
         <div class="credit">
             <span>Designed and Hand Coded by</span>
-            <a href="" target="_blank" rel="noopener">Your Company Name</a>
-            <span class="copyright"> Copyright 2021 - Present</span></div>
+            <a href="" target="_blank" rel="noopener">Benben Atlas Webdesigns</a>
+            <span class="copyright"> Copyright 2023 - Present</span></div>
     </footer>
 
 

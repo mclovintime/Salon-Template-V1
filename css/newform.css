@@ -4,6 +4,9 @@
 
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
+    .cs-wrapper{
+     width: 180px;   
+    }
     :root {
       /* remove this whole :root and put in your global css file that's shared on all pages, then just remove this section from all other Stitches you add later, only need this once in your global stylesheet */
       --primary: #AC8856;
@@ -21,6 +24,7 @@
       /* 60px - 100px top and bottom */
       --sectionPadding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem;
     }
+    
     #contact-983 {
       /* remove the font family so the Stitch inherits the fonts from your global stylesheet */
       font-family: 'Roboto', 'Arial', sans-serif;
@@ -154,6 +158,7 @@
     }
     #contact-983 .cs-submit {
       border: none;
+      
     }
     #contact-983 .cs-submit:hover {
       cursor: pointer;
